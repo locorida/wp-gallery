@@ -1,0 +1,36 @@
+.responsive-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Abstand zwischen den Bildern in alle Richtungen */
+    margin: 0; /* Kein zusätzlicher äußerer Rand */
+}
+
+.responsive-gallery a {
+    display: inline-flex;
+	 /* 3 Bilder pro Zeile mit Platz für den Abstand */
+    /*flex: 0 1 calc(33.33% - 15px);*/
+    box-sizing: border-box; /* Padding und Border zählen zur Gesamtbreite */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth Hover-Effekt */
+}
+
+.responsive-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-right: 3px;
+}
+
+
+@media (max-width: 768px) {
+    .responsive-gallery a {
+        flex: 0 1 calc(50% - 15px); /* 2 Bilder pro Zeile */
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-gallery a {
+        flex: 0 1 100%; /* 1 Bild pro Zeile */
+    }
+}
